@@ -15,7 +15,7 @@ class Root(controllers.RootController):
         import time
         # log.debug("Happy TurboGears Controller Responding For Duty")
         flash("Your application is now running")
-        return dict(now=time.ctime())
+        return dict(now=time.ctime(), comics=model.Comic.query.all())
 
 
     @expose(template='kid:rsscatchup.templates.rss', content_type='application/rss+xml', format='xml')

@@ -48,8 +48,9 @@ d_stop() {
 #       Function that sends a SIGHUP to the daemon/service. 
 # 
 d_reload() { 
-        start-stop-daemon --stop --pidfile $PIDFILE --name $NAME --signal 1 
-
+        d_stop
+        sleep 1
+        d_start
 } 
 
 case "$1" in 
