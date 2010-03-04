@@ -15,7 +15,7 @@ DESC="RSSCatchup"
 NAME="start-rsscatchup" 
 DAEMON=/usr/bin/$NAME 
 PIDFILE=/var/run/$NAME.pid 
-CONFIG=/etc/rsscatchup
+CONFIG=/etc/rsscatchup.conf
 
 SCRIPTNAME=/etc/init.d/$NAME 
 

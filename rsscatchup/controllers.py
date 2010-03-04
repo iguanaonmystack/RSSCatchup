@@ -21,7 +21,7 @@ class Root(controllers.RootController):
     @expose(template='kid:rsscatchup.templates.rss', content_type='application/rss+xml', format='xml')
     def rss(self, comic):
         today = datetime.date.today()
-        comic = model.Comic.query.filter_by(comic_name=comic).first()
+        comic = model.Comic.query.filter_by(comic_name=unicode(comic)).first()
         if not comic:
             raise cherrypy.HTTPError(404)
         
